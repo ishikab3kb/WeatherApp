@@ -37,7 +37,7 @@ const reducer = (state,action) => {
 const WeatherDisplay = () => {
 
   const [weatherData,setWeatherData] = useState(null)
-  const [error,setError] = useState('')
+  // const [error,setError] = useState('')
   const [weatherIcon,setWeatherIcon] = useReducer(reducer,intialState)
   // const [enteredCity, setEnteredCity] = useState('')
   const [enteredlat, setEnteredlat] = useState('')
@@ -49,12 +49,13 @@ const WeatherDisplay = () => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}`).then((response) => {
       console.log(response.data);
       setWeatherData(response.data);
-      setError('');
+      // setError('');
       setWeatherIcon(response.data.weather[0].main)
     })
     .catch(() => {
       setWeatherData({});
-      setError('Data not found');
+      // setError('Data not found');
+      // console.log(error);
     })
 
     // console.log(navigator.geolocation)
