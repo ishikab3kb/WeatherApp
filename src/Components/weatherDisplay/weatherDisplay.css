@@ -1,0 +1,113 @@
+.weatherDisplay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 80%;
+    margin: 2rem auto;
+    z-index: 999;
+    text-align: center;
+    flex: 2 1;
+    color: #fff;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    text-transform: capitalize;
+}
+
+/* .weatherDisplay_temp-img {
+    height: 100%;
+}
+
+.weatherDisplay_temp-img .weather-img {
+    object-fit: contain;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+} */
+
+/* .weatherDisplay_temp-img .temp-place {
+    position: relative;
+    z-index: 999;
+    bottom: 550px;
+    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 1.5rem;
+}
+
+.temp {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-between;
+} */
+
+.weatherDisplay_detailed-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.73);
+    min-width: 400px;
+}
+
+.weather-data {
+    width: 100%;
+}
+
+.property-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.property {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid grey;
+}
+
+.searchData {
+    text-align: center;
+}
+
+.searchData input {
+    color: black;
+    border: none;
+    border-radius: 25px;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+}
+
+.searchData input:focus {
+    border: none;
+}
+
+.searchData button {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+}
+
+.searchData button:hover {
+    background-color: black;
+    color: #fff;
+}
