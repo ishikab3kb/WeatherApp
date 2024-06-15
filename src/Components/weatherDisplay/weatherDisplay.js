@@ -4,7 +4,7 @@ import ReactAnimatedWeather from 'react-animated-weather';
 import weatherImg from '../../assets/1_Plw1KZLAw_S7iB69ES4pmw.png'
 import './weatherDisplay.css'
 import axios from 'axios';
-import API_KEY from '../../keys'
+// import API_KEY from '../../keys'
 import { useStateValue } from '../../StateProvider';
 import { actionTypes } from '../../Reducer'
 
@@ -55,7 +55,7 @@ const WeatherDisplay = () => {
   const [{lat,lon},dispatch] = useStateValue()
 
   useEffect(() => {
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`).then((response) => {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}`).then((response) => {
       console.log(response.data);
       setWeatherData(response.data);
       setError('');
