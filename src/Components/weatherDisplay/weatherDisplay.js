@@ -109,7 +109,7 @@ const WeatherDisplay = () => {
           <ul className='property-list'>
             <li className='property'>
               <p>Temperature</p>
-              <p>{weatherData ? `${weatherData.main.temp} °F` : ''} {`(Haze)`}</p>
+              <p>{weatherData ? `${(weatherData.main.temp)-273.15} °C` : ''} {`(Haze)`}</p>
             </li>
             <li className='property'>
               <p>Humidity</p>
