@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer, useState } from 'react'
 import ReactAnimatedWeather from 'react-animated-weather';
 // import { MdOutlineSearch } from "react-icons/md";
-import weatherImg from '../../assets/1_Plw1KZLAw_S7iB69ES4pmw.png'
+// import weatherImg from '../../assets/1_Plw1KZLAw_S7iB69ES4pmw.png'
 import './weatherDisplay.css'
 import axios from 'axios';
 // import API_KEY from '../../keys'
@@ -13,31 +13,22 @@ const reducer = (state,action) => {
   switch (action) {
     case "Clear":
       return "CLEAR_DAY";
-      break;
     case "Clouds":
       return "CLOUDY";
-      break;
     case "Rain":
       return "RAIN";
-      break;
     case "Snow":
       return "SNOW";
-      break;
     case "Dust":
       return "WIND";
-      break;
     case "Drizzle":
       return "SLEET";
-      break;
     case "Fog":
       return "FOG";
-      break;
     case "Smoke":
       return "FOG";
-      break;
     case "Tornado":
       return "WIND";
-      break;
     default:
       return state;
   }
