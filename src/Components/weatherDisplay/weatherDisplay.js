@@ -78,6 +78,7 @@ const WeatherDisplay = () => {
   return (
     <div className='weatherDisplay'>
       <div className='weatherDisplay_detailed-info'>
+      <h1>Weather App</h1>
       <form className='searchData'>
         <label>Latitute</label>
         <input type='text' value={enteredlat} onChange={(e) => setEnteredlat(e.target.value)}></input>
@@ -109,7 +110,7 @@ const WeatherDisplay = () => {
           <ul className='property-list'>
             <li className='property'>
               <p>Temperature</p>
-              <p>{weatherData ? `${(weatherData.main.temp)-273.15} °C` : ''} {`(Haze)`}</p>
+              <p>{weatherData ? `${Math.floor((weatherData.main.temp)-273.15)} °C` : ''} {`(Haze)`}</p>
             </li>
             <li className='property'>
               <p>Humidity</p>

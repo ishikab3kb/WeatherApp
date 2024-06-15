@@ -60,6 +60,10 @@
     min-width: 400px;
 }
 
+.weatherDisplay_detailed-info h1 {
+    margin: 0.5rem;
+}
+
 .weather-data {
     width: 100%;
 }
