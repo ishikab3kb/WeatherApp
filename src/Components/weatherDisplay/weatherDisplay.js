@@ -5,6 +5,7 @@ import ReactAnimatedWeather from 'react-animated-weather';
 import './weatherDisplay.css'
 import axios from 'axios';
 // import API_KEY from '../../keys'
+import env from "react-dotenv";
 import { useStateValue } from '../../StateProvider';
 import { actionTypes } from '../../Reducer'
 
