@@ -47,7 +47,7 @@ const WeatherDisplay = () => {
   const [{lat,lon},dispatch] = useStateValue()
 
   useEffect(() => {
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}`).then((response) => {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=401c5af7524c35ce4a956c32a16478b9`).then((response) => {
       console.log(response.data);
       setWeatherData(response.data);
       // setError('');
