@@ -45,13 +45,14 @@ const WeatherDisplay = () => {
   const [enteredlon, setEnteredlon] = useState('')
   // const [city,setCity] = useState('');
   const [{lat,lon},dispatch] = useStateValue()
+  const [showFah, setShowFah] = useState(false);
 
   useEffect(() => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=401c5af7524c35ce4a956c32a16478b9`).then((response) => {
       console.log(response.data);
       setWeatherData(response.data);
       // setError('');
-      setWeatherIcon(response.data.weather[0].main)
+      setWeatherIcon(response.data.weather[0].main);
     })
     .catch(() => {
       setWeatherData({});
@@ -75,6 +76,7 @@ const WeatherDisplay = () => {
   // },[city])
 
 
+
   return (
     <div className='weatherDisplay'>
       <div className='weatherDisplay_detailed-info'>
@@ -90,7 +92,16 @@ const WeatherDisplay = () => {
           lat: parseFloat(enteredlat,10),
           lon: parseFloat(enteredlon,10)})
           e.preventDefault();
-    }}>Search Current Weather</button>
+        }}>Search Current Weather</button>
+        <br></br>
+        <div className='scroll_switch'>
+        <p>Switch to Fahrenheit:</p>
+        <label class="switch">
+          <input type="checkbox" onClick={() => setShowFah(!showFah)}/>
+          <span class="slider round"></span>
+        </label>
+        </div>
+          
       </form>
       {/* <div className='searchBar'>
           <input type='text' value={enteredCity} onChange={(e) => setEnteredCity(e.target.value)}></input>
@@ -110,7 +121,7 @@ const WeatherDisplay = () => {
           <ul className='property-list'>
             <li className='property'>
               <p>Temperature</p>
-              <p>{weatherData ? `${Math.floor((weatherData.main.temp)-273.15)} °C` : ''} {`(Haze)`}</p>
+              <p>{`${(weatherData ? (showFah ? (Math.floor((9/5)*((weatherData.main.temp)-273.15)) + 32) : (Math.floor((weatherData.main.temp)-273.15))) : 0)} °`} {showFah ? 'F' : 'C'} {weatherData ? `(${weatherData.weather[0].main})` : ''}</p>
             </li>
             <li className='property'>
               <p>Humidity</p>
