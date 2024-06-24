@@ -9,6 +9,8 @@ import axios from 'axios';
 import { useStateValue } from '../../StateProvider';
 import { actionTypes } from '../../Reducer'
 
+const api_key = process.env.REACT_APP_API_KEY;
+
 const intialState = 'CLEAR_DAY'
 const reducer = (state,action) => {
   switch (action) {
@@ -48,7 +50,7 @@ const WeatherDisplay = () => {
   const [showFah, setShowFah] = useState(false);
 
   useEffect(() => {
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=401c5af7524c35ce4a956c32a16478b9`).then((response) => {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api_key}`).then((response) => {
       console.log(response.data);
       setWeatherData(response.data);
       // setError('');
